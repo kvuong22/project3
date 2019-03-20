@@ -69,7 +69,7 @@ def get_or_create_director(director_name):
 
 ## Main route
 @app.route('/')
-def homepage():
+def home():
     return '<h1> Hello, everyone!</h1>'
 
 
