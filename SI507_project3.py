@@ -70,7 +70,7 @@ def get_or_create_director(director_name):
 ## Main route
 @app.route('/')
 def home():
-    return '<h1> Hello, everyone!</h1>'
+    return '<h1> Hello and welcome to the movies database you will be creating!</h1>'
 
 
 @app.route('/new/movie/<title>/<rating>/<director>/')
@@ -82,7 +82,7 @@ def new_movie(title, rating, director):
         movie = Movie(title=title, director_id=director.id,mpaarating=rating)
         session.add(movie)
         session.commit()
-        return "Saving new movie: {} by {} with {} rating to our database.".format(movie.title,director.name,rating.mpaarating)
+        return "Saving new movie: {} by {} with {} rating to our database.".format(movie.title,director.name,movie.mpaarating)
 
 
 @app.route('/movies/all/')
